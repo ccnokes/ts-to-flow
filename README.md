@@ -1,5 +1,7 @@
 # Converting common TS constructs to Flow
 
+A very incomplete guide of going from TypeScript to Flow. Not sure why you would do this unless you work at Meta 😅 . Otherwise, you probably want to go from flow to TS.  
+
 Try the two here: 
 - [Flow playground](https://flow.org/try)
 - [TS playground](https://www.typescriptlang.org/play)
@@ -25,6 +27,17 @@ type Obj = {
 }
 $Keys<Obj>
 ```
+
+### nullable/maybe types
+This is actually sort of a sore spot in TS. If you have `strictNullChecks` on (recommended), it can make sense to have a global type that looks like this: 
+```ts
+type Nullable<T> = T | undefined | null;
+```
+In flow, this concept is built-in with the `?` prefix operator.
+```js
+?string
+```
+
 
 ## Built-ins
 
