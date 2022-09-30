@@ -8,6 +8,8 @@ Try the two here:
 
 Another (out of date) reference: https://github.com/niieani/typescript-vs-flowtype
 
+All examples show TS first, then Flow.
+
 ## General
 
 ### typeof
@@ -38,6 +40,17 @@ In flow, this concept is built-in with the `?` prefix operator.
 ?string
 ```
 
+### Partial<T>
+In flow, `$Shape` is equivalent to `Partial`.
+```ts
+type Obj = { id: number, name: string };
+Partial<Obj>
+```
+
+```js
+type Obj = { id: number, name: string };
+$Shape<Obj>
+```
 
 ## Built-ins
 
